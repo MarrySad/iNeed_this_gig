@@ -4,6 +4,9 @@
 # netbeans project files
 nbproject
 
+$ runtime
+/runtime
+
 # zend studio for eclipse project files
 .buildpath
 .project
@@ -281,3 +284,4 @@ eption/base/tests/data/included_w/src/foo/AcmePack/tests/unit/
 Будет удалено widgets/
 Будет удалено yii
 Будет удалено yii.bat
+Будет удалено modules/user/components/
