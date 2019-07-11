@@ -7,4 +7,3 @@
 <?='Контроллер: '. \Yii::$app->controller->id  ?>
 <br>
 <?='Экшен: '. \Yii::$app->controller->action->id ?>
-
