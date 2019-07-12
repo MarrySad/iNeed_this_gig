@@ -9,11 +9,10 @@ use app\modules\user\models\Users;
 use app\modules\user\Module;
 use yii\base\Action;
 
-class SignUpAction extends Action
-{
+class SignUpAction extends Action {
 
-    public function run()
-    {
+    public function run() {
+        $this->controller->title = 'Регистрация пользователя';
         /** @var Module $module */
         $module = \Yii::$app->getModule('user');
 
