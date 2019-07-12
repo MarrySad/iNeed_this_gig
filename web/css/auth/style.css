@@ -7,14 +7,13 @@
     outline: none;
 }
 main {
-    background-image: url('/img/auth/img-bachground.jpg');
     width: 100%;
-    height: 633px;
+    height: 100%;
     display: flex;
     align-items: center;
 }
 .authorization {
-    margin-left: 90px;
+    margin: 0 auto;
     width: 375px;
     display: flex;
     flex-wrap: wrap;
@@ -32,15 +31,16 @@ main {
 .title-form {
     position: relative;
     text-align: center;
+    margin: 0 auto;
 }
 .name {
     text-transform: capitalize;
 }
 .input-login-password {
-    margin: 5px;
-    padding: 20px;
-    width: 260px;
-    border-radius: 50px;
+    margin: 5px auto;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 40px;
     font-size: 20px;
     outline: none;
     color: #797979;
@@ -54,10 +54,9 @@ main {
     text-align: initial;
 }
 .form-button {
-    position: absolute;
-    top: 290px;
-    left: 112px;
-    padding: 10px;
+    position: relative;
+    bottom: -2rem;
+    padding: 1rem;
     width: 150px;
     font-size: 25px;
     color: white;

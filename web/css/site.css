@@ -7,6 +7,8 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    background: url('/img/auth/img-bachground.jpg') no-repeat;
+    background-size: cover;
 }
 
 .wrap {

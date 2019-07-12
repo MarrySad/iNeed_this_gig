@@ -7,7 +7,6 @@ use yii\helpers\Html;
 ?>
 
 <main class="d-inline-flex">
-	<div class="align-content-center">
     <div class="authorization">
         <span class="authorization-span">авторизация</span>
 
@@ -39,7 +38,6 @@ use yii\helpers\Html;
         <?php ActiveForm::end(); ?>
 
     </div>
-		</div>
 </main>
 
 

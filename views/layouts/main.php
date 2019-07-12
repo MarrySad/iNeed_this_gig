@@ -27,13 +27,13 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <div class="container">
+<!--    <div class="container">-->
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
+<!--    </div>-->
 </div>
 <footer style="text-align: center; background-color: #d9534f">
 	<h3>Тут футер</h3>
