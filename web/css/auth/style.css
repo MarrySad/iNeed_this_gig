@@ -1,12 +1,3 @@
-@font-face {
-    font-family: "PerpetuaTitlingMT";
-    src: url('/fonts/PerpetuaTitlingMT/PERTILI.ttf');
-}
-@font-face {
-    font-family: FranklinGothicBook;
-    src: url('/fonts/FranklinGothicBook/FRABK.ttf');
-}
-
 .title-button:hover {
     color: white;
     background-color: #981f88;
