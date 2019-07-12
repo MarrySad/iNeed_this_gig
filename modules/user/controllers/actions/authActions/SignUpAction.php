@@ -28,7 +28,7 @@ class SignUpAction extends Action
             $model->setScenario($model::SCENARIO_REGISTER);
             if ($component->registerUser($model)) {
                 \Yii::$app->session->addFlash('success', 'Регистрация есть');
-                return $this->controller->redirect('/');
+                return $this->controller->redirect('/sign-in');
             } else {
                 \Yii::$app->session->addFlash('alert', 'Регистрации нет');
             }
