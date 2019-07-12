@@ -18,7 +18,7 @@ class AuthController extends BaseController {
             ],
             'sign-up' => [
                 'class' => SignUpAction::class
-            ]
+            ],
         ];
     }
 

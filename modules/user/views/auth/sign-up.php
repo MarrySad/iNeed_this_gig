@@ -1,10 +1,27 @@
 <?php
 
 \app\assets\authAsset::register($this);
+use yii\bootstrap\ActiveForm;
+use \yii\helpers\Html;
 ?>
 
+<div class="row">
+    <div class="col-md-4">
+        <?php /** @var ActiveForm $form */ ?>
+        <?php $form = ActiveForm::begin(); ?>
 
+        <?= $form->field($model, 'family'); ?>
+        <?= $form->field($model, 'name'); ?>
+        <?= $form->field($model, 'patronymic'); ?>
+        <?= $form->field($model, 'email'); ?>
+        <?= $form->field($model, 'phone'); ?>
+        <?= $form->field($model, 'password')->passwordInput(); ?>
+        <?= $form->field($model, 'password_repeat')->passwordInput(); ?>
+        <?= Html::submitButton('регимся', ['class' => 'btn btn-success']); ?>
 
+        <?php ActiveForm::end(); ?>
+    </div>
+</div>
 
     <main>
         <div class="authorization">
