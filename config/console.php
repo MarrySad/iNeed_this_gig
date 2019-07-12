@@ -13,6 +13,11 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
         '@tests' => '@app/tests',
     ],
+    'modules' => [
+        'user' => [
+            'class' => 'app\modules\auth\Module',
+        ],
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
