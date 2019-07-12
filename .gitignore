@@ -4,7 +4,7 @@
 # netbeans project files
 nbproject
 
-$ runtime
+# runtime
 /runtime
 
 # zend studio for eclipse project files
