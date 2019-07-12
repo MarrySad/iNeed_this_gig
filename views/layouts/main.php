@@ -35,6 +35,10 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 </div>
+<footer style="text-align: center; background-color: #d9534f">
+	<h3>Тут футер</h3>
+	<h3>И он прижат</h3>
+</footer>
 <?php $this->endBody() ?>
 </body>
 </html>
