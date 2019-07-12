@@ -6,7 +6,8 @@ use yii\helpers\Html;
 
 ?>
 
-<main>
+<main class="d-inline-flex">
+	<div class="align-content-center">
     <div class="authorization">
         <span class="authorization-span">авторизация</span>
 
@@ -14,9 +15,6 @@ use yii\helpers\Html;
             'options' => [
                 'class' => 'title-form',
             ],
-//            'fieldConfig' => [
-//                'enableAjaxValidation' => TRUE,
-//            ],
         ]); ?>
 
         <?= $form->field($model, 'email')->textInput([
@@ -35,12 +33,13 @@ use yii\helpers\Html;
 
         <p class="registratsiya">
             У вас еще нет аккаунта? Тогда пройдите
-            процедуру <?= Html::a('регистрации', '/sign-up') ?>
+            процедуру <?= Html::a('регистрации', \Yii::getAlias('@sign-up')) ?>
         </p>
         <?= Html::submitButton('войти', ['class' => 'form-button']); ?>
         <?php ActiveForm::end(); ?>
 
     </div>
+		</div>
 </main>
 
 

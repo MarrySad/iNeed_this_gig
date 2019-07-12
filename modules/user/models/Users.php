@@ -47,10 +47,19 @@ class Users extends UsersBase implements IdentityInterface
             ['password', 'string'],
             ['stayLogged', 'boolean'],
             ['password_repeat', 'string'],
-            ['password', 'required', 'on' => self::SCENARIO_REGISTER],
+            ['password', 'required'],
             ['password_repeat', 'required', 'on' => self::SCENARIO_REGISTER],
             ['password_repeat', 'compare', 'compareAttribute' => 'password'],
         ],parent::rules());
+    }
+
+    public function attributeLabels() {
+        return [
+            'email' => 'Email',
+            'password' => 'Пароль',
+            'password_repeat' => 'Повторите пароль',
+            'name' => 'Имя'
+        ];
     }
 
     /**
