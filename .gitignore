@@ -34,6 +34,9 @@ phpunit.phar
 
 #vagrant folder
 /vagrant
+
+db_local.php
+
 Будет удалено .bowerrc
 Будет удалено .gitignore
 Будет удалено LICENSE.md
