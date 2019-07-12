@@ -12,11 +12,6 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
-    'modules' => [
-        'user' => [
-            'class' => 'app\modules\auth\Module',
-        ],
-    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -26,7 +21,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => \app\models\User::class,
+            'identityClass' => app\modules\user\models\Users::class,
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -83,7 +78,7 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
         'allowedIPs' => ['82.151.209.202', '90.151.136.236'],
-//        'allowedIPs' => ['*'],
+        //        'allowedIPs' => ['*'],
     ];
 }
 
