@@ -26,19 +26,26 @@ use yii\web\IdentityInterface;
  * @property string $birthday Дата рождения клиента
  * @property string $password
  * @property string $password_repeat
+ * @property bool $stayLogged
+ * @property string $username
  */
 class Users extends UsersBase implements IdentityInterface
 {
+    public $username;
     public $password;
     public $password_repeat;
+    public $stayLogged;
 
     const SCENARIO_REGISTER = 'register';
 
     public function rules()
     {
         return array_merge([
+            ['username', 'string'],
             ['email', 'email'],
+            ['email', 'unique'],
             ['password', 'string'],
+            ['stayLogged', 'boolean'],
             ['password_repeat', 'string'],
             ['password', 'required', 'on' => self::SCENARIO_REGISTER],
             ['password_repeat', 'required', 'on' => self::SCENARIO_REGISTER],
@@ -55,7 +62,7 @@ class Users extends UsersBase implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-        // TODO: Implement findIdentity() method.
+        return Users::find()->andWhere(['id' => $id])->one();
     }
 
     /**
@@ -78,7 +85,7 @@ class Users extends UsersBase implements IdentityInterface
      */
     public function getId()
     {
-        // TODO: Implement getId() method.
+        return $this->id;
     }
 
     /**
@@ -100,7 +107,7 @@ class Users extends UsersBase implements IdentityInterface
      */
     public function getAuthKey()
     {
-        // TODO: Implement getAuthKey() method.
+        return uniqid();
     }
 
     /**
@@ -113,6 +120,6 @@ class Users extends UsersBase implements IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
-        // TODO: Implement validateAuthKey() method.
+        return true;
     }
 }

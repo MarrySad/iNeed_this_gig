@@ -51,7 +51,8 @@ $config = [
             'rules' => [
                 '/' => 'user/auth/sign-up',
                 'sign-up' => 'user/auth/sign-up',
-                'sign-in' => 'user/auth/sign-in'
+                'sign-in' => 'user/auth/sign-in',
+                'info' => 'user/auth/info',
             ],
         ],
 
@@ -70,7 +71,8 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['82.151.209.202', '90.151.136.236'],
+//        'allowedIPs' => ['82.151.209.202', '90.151.136.236'],
+        'allowedIPs' => ['*'],
     ];
 
     $config['bootstrap'][] = 'gii';

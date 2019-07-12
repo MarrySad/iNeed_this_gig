@@ -5,6 +5,7 @@ namespace app\modules\user\controllers;
 
 
 use app\base\BaseController;
+use app\modules\user\controllers\actions\authActions\InfoAction;
 use app\modules\user\controllers\actions\authActions\SignInAction;
 use app\modules\user\controllers\actions\authActions\SignUpAction;
 
@@ -18,6 +19,9 @@ class AuthController extends BaseController {
             ],
             'sign-up' => [
                 'class' => SignUpAction::class
+            ],
+            'info' => [
+                'class' => InfoAction::class
             ],
         ];
     }
