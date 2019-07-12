@@ -14,15 +14,12 @@ class m190711_194452_CreateTableUsers extends Migration {
         $this->createTable('Users', [
             'id' => $this->primaryKey(),
             'family' => $this->string(60)
-                             ->notNull()
                              ->comment('Фамилия'),
 
             'name' => $this->string(60)
-                           ->notNull()
                            ->comment('Имя'),
 
             'patronymic' => $this->string(60)
-                                 ->notNull()
                                  ->comment('Отчество'),
 
             'typeRegistry' => 'ENUM("musician", "employer")',
@@ -32,10 +29,10 @@ class m190711_194452_CreateTableUsers extends Migration {
                             ->comment('Email  клиента оставившего заказ'),
 
             'phone' => $this->string(22)
-                            ->notNull()
                             ->comment('Телефон клиента оставившего заказ'),
 
             'passwordHash' => $this->string(300)
+                                    ->notNull()
                                    ->comment('Хеш пароля'),
 
             'authToken' => $this->string(300)

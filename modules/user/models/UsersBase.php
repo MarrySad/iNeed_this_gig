@@ -37,7 +37,7 @@ class UsersBase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['family', 'name', 'patronymic', 'email', 'phone'], 'required'],
+            [['email', 'passwordHash'], 'required'],
             [['typeRegistry'], 'string'],
             [['dateRegistry', 'dateVisit'], 'integer'],
             [['birthday'], 'safe'],

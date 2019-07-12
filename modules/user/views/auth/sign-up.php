@@ -10,11 +10,7 @@ use \yii\helpers\Html;
         <?php /** @var ActiveForm $form */ ?>
         <?php $form = ActiveForm::begin(); ?>
 
-        <?= $form->field($model, 'family'); ?>
-        <?= $form->field($model, 'name'); ?>
-        <?= $form->field($model, 'patronymic'); ?>
         <?= $form->field($model, 'email'); ?>
-        <?= $form->field($model, 'phone'); ?>
         <?= $form->field($model, 'password')->passwordInput(); ?>
         <?= $form->field($model, 'password_repeat')->passwordInput(); ?>
         <?= Html::submitButton('регимся', ['class' => 'btn btn-success']); ?>

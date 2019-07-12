@@ -40,12 +40,12 @@ class UsersAuthComponent extends Component
      */
     public function registerUser(&$model):bool
     {
+        $model->dateRegistry = time();
+        $model->passwordHash = \Yii::$app->security->generatePasswordHash($model->password);
+
         if (!$model->validate()) {
             return false;
         }
-
-        $model->dateRegistry = time();
-        $model->passwordHash = \Yii::$app->security->generatePasswordHash($model->password);
 
         if (!$model->save()) {
             return false;
