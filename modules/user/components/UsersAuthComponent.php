@@ -76,6 +76,10 @@ class UsersAuthComponent extends Component
             return false;
         }
 
+        if ($model->stayLogged) {
+            \Yii::$app->user->enableAutoLogin = true;
+        }
+
         $user->username = $user->email;
 
         return \Yii::$app->user->login($user);
