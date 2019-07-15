@@ -27,7 +27,7 @@ class SignInAction extends Action
             $model = $component->getModel(\Yii::$app->request->post());
             if ($component->userAuthentication($model)) {
                 \Yii::$app->session->addFlash('success', 'Мы авторизованы');
-                return $this->controller->redirect('/info');
+                return $this->controller->redirect(\Yii::getAlias('@info'));
             }
         }
 
