@@ -5,7 +5,7 @@ use yii\bootstrap4\ActiveForm;
 use \yii\helpers\Html;
 ?>
 
-<div class="row">
+
     <div class="col-md-4">
         <?php /** @var ActiveForm $form */ ?>
         <?php $form = ActiveForm::begin(); ?>
@@ -17,7 +17,7 @@ use \yii\helpers\Html;
 
         <?php ActiveForm::end(); ?>
     </div>
-</div>
+
 
 <!--    <main>-->
 <!--        <div class="authorization">-->

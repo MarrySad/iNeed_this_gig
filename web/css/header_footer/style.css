@@ -41,6 +41,9 @@ nav {
     border-color: #a01e81;
     color: #a01e81;
 }
+.navbar-nav {
+    float: right !important;
+}
 
 
 
