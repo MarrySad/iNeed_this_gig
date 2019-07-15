@@ -10,12 +10,13 @@ namespace app\commands;
 
 
 use yii\console\Controller;
+use yii\helpers\Console;
 
 class RbacController extends Controller
 {
     public function actionIndex()
     {
         \Yii::$app->rbac->generateRules();
-        echo 'seems like rules has been generated, check it out' . PHP_EOL;
+        $this->stdout("Rbac готов".PHP_EOL, Console::FG_GREEN);
     }
 }

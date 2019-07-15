@@ -11,29 +11,32 @@ namespace app\components;
 
 use yii\base\Component;
 
-class RbacComponent extends Component
-{
-    const RULE_ADMIN = 'admin';
-    const RULE_USER = 'user';
+class RbacComponent extends Component {
+
+    const ROLE = [
+        [
+            'user' => 'admin',
+            'description' => 'Повелитель сайта'
+        ],
+        [
+            'user' => 'user',
+            'description' => 'Обычный пользоватлеь на сайте'
+        ]
+    ];
+
+    public function generateRules() {
+        $authManager = $this->getAuthManager();
+        $authManager->removeAll();
+
+        foreach (self::ROLE as $role) {
+            $authManager->add($authManager->createRole($role['user'])->description->$role['description']);
+        }
+    }
 
     /**
      * @return \yii\rbac\ManagerInterface
      */
-    public function getAuthManager()
-    {
+    public function getAuthManager() {
         return \Yii::$app->authManager;
-    }
-
-    public function generateRules()
-    {
-        $authManager = $this->getAuthManager();
-
-        $authManager->removeAll();
-
-        $admin = $authManager->createRole(self::RULE_ADMIN);
-        $user = $authManager->createRole(self::RULE_USER);
-
-        $authManager->add($admin);
-        $authManager->add($user);
     }
 }
