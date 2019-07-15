@@ -17,9 +17,9 @@ use yii\web\AssetBundle;
  */
 class authAsset extends AssetBundle {
     public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $baseUrl = '@web/css/modules/user/auth';
     public $css = [
-        'css/auth/style.css',
+        'style.css',
     ];
     public $js = [];
 }
