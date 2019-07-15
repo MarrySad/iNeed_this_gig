@@ -1,21 +1,30 @@
 <?php
-$auth = (\Yii::$app->user->isGuest) ? 'Войти' : 'Выйти';
+$auth = (\Yii::$app->user->isGuest) ? 'Войти' : 'Выйти(' . \Yii::$app->user->identity->email . ')';
 ?>
 
 
-<nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="#">INEED_THIS_GIG</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">&#9776;</span>
-            </button>
+<?php
+\yii\bootstrap4\NavBar::begin([
+    'brandLabel' => 'INEED_THIS_GIG',
+    'brandUrl' => Yii::$app->homeUrl,
+    'renderInnerContainer' => false,
+    'togglerContent' => '<span class="navbar-toggler-icon">&#9776;</span>',
+    'options' => [
+        'class' => 'navbar navbar-expand-md',
+    ],
+]);
+$menuItems = [
+    ['label' => 'Главная', 'url' => ['/user/auth']],
+    ['label' => 'Кнопка', 'url' => [\Yii::getAlias('@sign-in')], 'id' => 6],
+    [
+        'label' => $auth,
+        'url' => [(\Yii::$app->user->isGuest) ? \Yii::getAlias('@sign-in') : \Yii::getAlias('@log-out')]
+    ],
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Главная<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Кнопка</a>
-                    <a class="nav-item nav-link"
-                       href="<?= (\Yii::$app->user->isGuest) ? \Yii::getAlias('@sign-in') : \Yii::getAlias('@log-out') ?>"><?= $auth ?></a>
-                </div>
-            </div>
-</nav>
+];
+echo \yii\bootstrap4\Nav::widget([
+    'items' => $menuItems,
+    'options' => ['class' => 'navbar-nav navbar-collapse justify-content-end'],
+]);
+\yii\bootstrap4\NavBar::end();
+?>
