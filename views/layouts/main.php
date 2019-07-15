@@ -22,12 +22,12 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->context->title) ?></title>
+	<title><?= Html::encode($this->context->title) ?></title>
     <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<?php $auth = (\Yii::$app->user->isGuest) ? 'Войти' : 'Выйти'; ?>
 <div class="wrap">
     <!--    <div class="container">-->
     <div class="container-fluid">
@@ -44,7 +44,8 @@ AppAsset::register($this);
                     <div class="navbar-nav">
                         <a class="nav-item nav-link active" href="#">Главная<span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" href="#">Кнопка</a>
-                        <a class="nav-item nav-link" href="#">Авторизация</a>
+	                    <a class="nav-item nav-link"
+	                       href="<?= (\Yii::$app->user->isGuest) ? \Yii::getAlias('@sign-in') : \Yii::getAlias('@log-out') ?>"><?= $auth ?></a>
                     </div>
                 </div>
             </nav>
@@ -57,7 +58,7 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 
-    <!--    </div>-->
+	<!--    </div>-->
 </div>
 
 <footer class="mt-auto">
