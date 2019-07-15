@@ -1,6 +1,6 @@
 <?php
 
-\app\assets\authAsset::register($this);
+//\app\assets\authAsset::register($this);
 use yii\bootstrap4\ActiveForm;
 use \yii\helpers\Html;
 ?>

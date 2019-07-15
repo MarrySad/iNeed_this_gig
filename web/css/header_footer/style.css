@@ -64,21 +64,6 @@ nav {
     padding: 8px;
 }
 
-
-
-
-
-
-
-footer {
-    padding: 8px 16px;
-    min-height: 75px;
-    background-color: #0f1221;
-    color: #7f7e7e;
-    display: flex;
-    align-items: center;
-}
-
 #copywrite {
     margin: 0;
     font-size: 18px;

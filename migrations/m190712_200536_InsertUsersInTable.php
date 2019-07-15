@@ -35,7 +35,7 @@ class m190712_200536_InsertUsersInTable extends Migration
      */
     public function safeDown()
     {
-        $this->delete('Users');
+        $this->truncateTable('Users');
     }
 
     /*
