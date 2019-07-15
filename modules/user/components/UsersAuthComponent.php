@@ -11,8 +11,7 @@ namespace app\modules\user\components;
 use app\modules\user\models\Users;
 use yii\base\Component;
 
-class UsersAuthComponent extends Component
-{
+class UsersAuthComponent extends Component {
     /** @var Users $userModel */
     public $userModel;
 
@@ -22,15 +21,9 @@ class UsersAuthComponent extends Component
      * @throws \yii\base\InvalidConfigException
      * @throws \yii\di\NotInstantiableException
      */
-    public function getModel($params = null)
-    {
+    public function getModel($params = null) {
         /** @var Users $model */
         $model = \Yii::$container->get($this->userModel);
-
-        if ($params && is_array($params)) {
-            $model->load($params);
-        }
-
         return $model;
     }
 
@@ -39,8 +32,7 @@ class UsersAuthComponent extends Component
      * @return bool true if success
      * @throws \yii\base\Exception
      */
-    public function registerUser(&$model):bool
-    {
+    public function registerUser(Users &$model): bool {
         $model->dateRegistry = time();
         $model->passwordHash = \Yii::$app->security->generatePasswordHash($model->password);
 
@@ -61,18 +53,15 @@ class UsersAuthComponent extends Component
      * @throws \yii\base\InvalidConfigException
      * @throws \yii\di\NotInstantiableException
      */
-    public function userAuthentication(&$model):bool
-    {
-        /** @var Users $user */
-        $user = $this->getUserByEmail($model->email);
+    public function userAuthentication(Users &$model): bool {
 
-        if (!$user) {
-            $model->addError('email', 'Нет такого ' . $model->email);
+        if (!$model->validate(['email', 'password'])) {
             return false;
         }
+        $user = $this->getUserByEmail($model->email);
 
         if (!$this->validatePassword($model->password, $user->passwordHash)) {
-            $model->addError('password', 'Пароль неправильный');
+            $model->addError('password', 'Не правильный логин или пароль');
             return false;
         }
 
@@ -91,9 +80,11 @@ class UsersAuthComponent extends Component
      * @throws \yii\base\InvalidConfigException
      * @throws \yii\di\NotInstantiableException
      */
-    private function getUserByEmail($email)
-    {
-        return \Yii::$container->get($this->userModel)::find()->andWhere(['email' => $email])->one();
+    private function getUserByEmail($email): Users {
+        return Users::find()
+                    ->andWhere(['email' => $email])
+                    ->limit(1)
+                    ->one();
     }
 
     /**
@@ -101,8 +92,7 @@ class UsersAuthComponent extends Component
      * @param $passwordHash passwordHash from table users
      * @return bool if success
      */
-    private function validatePassword($password, $passwordHash):bool
-    {
+    private function validatePassword($password, $passwordHash): bool {
         return \Yii::$app->security->validatePassword($password, $passwordHash);
     }
 }

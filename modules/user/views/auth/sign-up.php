@@ -7,7 +7,7 @@ use \yii\helpers\Html;
 
 ?>
 
-
+<div class="container">
 <div class="col-md-4">
         <?php /** @var ActiveForm $form */ ?>
         <?php $form = ActiveForm::begin(); ?>
@@ -21,11 +21,12 @@ use \yii\helpers\Html;
                  ])
                  ->textInput(['placeholder' => 'Электронная почта'])
                  ->label(false) ?>
-        <?= $form->field($model, 'password')
-                 ->passwordInput(); ?>
-        <?= $form->field($model, 'password_repeat')
-                 ->passwordInput(); ?>
+        <?= $form->field($model, 'password')->textInput()->label(false)
+                 ->passwordInput(['placeholder' => 'Пароль']); ?>
+        <?= $form->field($model, 'confirmPass')->textInput()->label(false)
+                 ->passwordInput(['placeholder' => 'Повторите пароль']); ?>
         <?= Html::submitButton('Регистрация', ['class' => 'btn btn-success']); ?>
 
         <?php ActiveForm::end(); ?>
     </div>
+	</div>

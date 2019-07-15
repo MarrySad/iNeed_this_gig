@@ -18,6 +18,6 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        \Yii::configure($this, require __DIR__ . '/user_module_config.php');
+        \Yii::configure($this, require __DIR__ . '/userModulConfog.php');
     }
 }

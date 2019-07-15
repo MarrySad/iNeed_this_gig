@@ -6,7 +6,21 @@ use yii\helpers\Html;
 
 ?>
 
+<?php
+if ($model->errors) : ?>
+    <?php foreach ($model->errors as $k => $v) : ?>
+		<div class="alert alert-warning alert-dismissible fade show position-absolute" role="alert">
+  <strong><?= $k ?>
+	  : </strong> <?= $v[0] ?>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+    <?php endforeach; ?>
+<?php endif ?>
+
 <main class="d-inline-flex">
+
     <div class="authorization">
         <span class="authorization-span">авторизация</span>
 

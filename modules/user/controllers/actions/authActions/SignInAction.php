@@ -5,33 +5,39 @@ namespace app\modules\user\controllers\actions\authActions;
 
 
 use app\modules\user\components\UsersAuthComponent;
+use app\modules\user\models\Users;
 use app\modules\user\Module;
 use yii\base\Action;
+
 //use yii\bootstrap4\ActiveForm;
 //use yii\web\Response;
 
-class SignInAction extends Action
-{
-    public function run()
-    {
+class SignInAction extends Action {
+    /**
+     * @return string|\yii\console\Response|\yii\web\Response
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\di\NotInstantiableException
+     */
+    public function run() {
         $this->controller->title = 'Авторизация ';
-        /** @var Module $module */
-        $module = \Yii::$app->getModule('user');
 
         /** @var UsersAuthComponent $component */
-        $component = $module->get('users');
+       $model = \Yii::createObject(Users::class)->setScenarioSignIn();
 
-        $model = $component->getModel();
-
-        if (\Yii::$app->request->isPost) {
-            $model = $component->getModel(\Yii::$app->request->post());
-            if ($component->userAuthentication($model)) {
-                \Yii::$app->session->addFlash('success', 'Мы авторизованы');
-                return $this->controller->redirect(\Yii::getAlias('@info'));
+        if (\Yii::$app->request->isPost && $model->load(\Yii::$app->request->post())) {
+            if ($this->getAuthComponent()->userAuthentication($model)) {
+                return \Yii::$app->response->redirect(\Yii::getAlias('@info'));
             }
         }
 
-        return $this->controller->render('index', compact('model'));
+        return $this->controller->render('sign-in', compact('model'));
     }
+
+        /** @return UsersAuthComponent */
+    private function getAuthComponent() {
+        return \Yii::createObject(UsersAuthComponent::class);
+    }
+
+
 
 }

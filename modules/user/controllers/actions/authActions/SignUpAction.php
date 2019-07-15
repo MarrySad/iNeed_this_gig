@@ -20,16 +20,12 @@ class SignUpAction extends Action {
         $component = $module->get('users');
 
         /** @var Users $model */
-        $model = $component->getModel();
+        $model = $component->getModel()->setScenarioSignUp();
 
-        if (\Yii::$app->request->isPost) {
+         if (\Yii::$app->request->isPost && $model->load(\Yii::$app->request->post())) {
             $model = $component->getModel(\Yii::$app->request->post());
-            $model->setScenario($model::SCENARIO_REGISTER);
             if ($component->registerUser($model)) {
-                \Yii::$app->session->addFlash('success', 'Регистрация есть');
-                return $this->controller->redirect(\Yii::getAlias('@sign-in'));
-            } else {
-                \Yii::$app->session->addFlash('alert', 'Регистрации нет');
+                return \Yii::$app->response->redirect(\Yii::getAlias('@sign-in'));
             }
         }
 
