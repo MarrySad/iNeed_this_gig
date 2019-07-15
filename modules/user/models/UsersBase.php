@@ -21,23 +21,19 @@ use Yii;
  * @property int $dateVisit Дата последнего входа на сайт
  * @property string $birthday Дата рождения клиента
  */
-class UsersBase extends \yii\db\ActiveRecord
-{
+class UsersBase extends \yii\db\ActiveRecord {
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'Users';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['email', 'passwordHash'], 'required'],
             [['typeRegistry'], 'string'],
             [['dateRegistry', 'dateVisit'], 'integer'],
             [['birthday'], 'safe'],
@@ -51,8 +47,7 @@ class UsersBase extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => Yii::t('app', 'ID'),
             'family' => Yii::t('app', 'Family'),
