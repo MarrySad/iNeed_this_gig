@@ -13,7 +13,8 @@ $config = [
         '@npm' => '@vendor/npm-asset',
         '@sign-in' => 'sign-in',
         '@sign-up' => 'sign-up',
-        '@log-out' => 'log-out'
+        '@log-out' => 'log-out',
+        '@info' => 'info',
     ],
     'components' => [
         'request' => [
