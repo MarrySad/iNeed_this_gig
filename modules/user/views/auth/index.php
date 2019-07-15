@@ -15,19 +15,28 @@ use yii\helpers\Html;
                 'class' => 'title-form',
             ],
         ]); ?>
+        <?= $form->field($model, 'email')
+                 ->Widget(\yii\widgets\MaskedInput::class, [
+                     'name' => 'input-36',
+                     'clientOptions' => [
+                         'alias' => 'email'
+                     ]
+                 ])
+                 ->textInput(['placeholder' => 'Электронная почта', 'class' => 'input-login-password name'])
+                 ->label(false) ?>
 
-        <?= $form->field($model, 'email')->textInput([
-            'class' => 'input-login-password name',
-            'placeholder' => 'Логин: ',
-        ])->label(false); ?>
 
-        <?= $form->field($model, 'password')->passwordInput([
-            'class' => 'input-login-password',
-            'placeholder' => 'Пароль: '
-        ])->label(false); ?>
+        <?= $form->field($model, 'password')
+                 ->passwordInput([
+                     'class' => 'input-login-password',
+                     'placeholder' => 'Пароль: '
+                 ])
+                 ->label(false); ?>
 
-        <p class="checkbox">
-            <?= $form->field($model, 'stayLogged')->checkbox()->label('Оставаться в сети'); ?>
+	    <p class="checkbox">
+            <?= $form->field($model, 'stayLogged')
+                     ->checkbox()
+                     ->label('Оставаться в сети'); ?>
         </p>
 
         <p class="registratsiya">
