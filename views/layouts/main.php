@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use app\widgets\Alert;
@@ -11,6 +12,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
+\app\assets\HeaderFooterAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -27,17 +29,39 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-<!--    <div class="container">-->
+    <!--    <div class="container">-->
+    <div class="container-fluid">
+
+        <header>
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand" href="#">INEED_THIS_GIG</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">&#9776;</span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="#">Главная<span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">Кнопка</a>
+                        <a class="nav-item nav-link" href="#">Авторизация</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
-<!--    </div>-->
+    </div>
+
+    <!--    </div>-->
 </div>
-<footer style="text-align: center; background-color: #d9534f">
-	<h3>Тут футер</h3>
-	<h3>И он прижат</h3>
+
+<footer class="mt-auto">
+    <p id="copywrite">© 2019/ iNeed_this_gig. Все права защищены</p>
 </footer>
 <?php $this->endBody() ?>
 </body>
