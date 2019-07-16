@@ -12,7 +12,7 @@ class m190716_130831_addColumnTimeZoneToUsers extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn('Users', 'time_zone_id', $this->integer(11)->notNull());
+        $this->addColumn('Users', 'time_zone_id', $this->integer(11)->notNull()->defaultValue(2));
     }
 
     /**

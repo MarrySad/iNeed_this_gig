@@ -15,11 +15,12 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class authAsset extends AssetBundle {
+class ErrorAsset extends AssetBundle {
     public $basePath = '@webroot';
-    public $baseUrl = '@web/css/modules/user/auth';
+    public $baseUrl = '@web';
     public $css = [
-        'style.css',
+        'css/error.css',
+        '//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700&subset=latin,cyrillic'
     ];
     public $js = [];
 }

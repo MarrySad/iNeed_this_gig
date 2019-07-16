@@ -27,19 +27,15 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<?php $auth = (\Yii::$app->user->isGuest) ? 'Войти' : 'Выйти'; ?>
 
 <header>
-	<?= $this->render('header'); ?>
+    <?= $this->render('header'); ?>
 </header>
-
 <div class="wrap">
-	<?= $content ?>
+		<?= $content ?>
 </div>
-
 <footer>
 	<?= $this->render('footer'); ?>
-
 </footer>
 
 

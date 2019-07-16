@@ -11,10 +11,10 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
-        '@sign-in' => 'sign-in',
-        '@sign-up' => 'sign-up',
-        '@log-out' => 'log-out',
-        '@info' => 'info',
+        '@sign-in' => '/sign-in',
+        '@sign-up' => '/sign-up',
+        '@log-out' => '/log-out',
+        '@info' => '/info',
     ],
     'components' => [
         'request' => [
@@ -55,6 +55,9 @@ $config = [
                 ],
             ],
         ],
+        'menu' => [
+            'class' => app\components\menuComponent::class
+        ],
         'db' => $db,
 
         'urlManager' => [
@@ -62,10 +65,10 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'user/auth/sign-up',
-                'sign-up' => 'user/auth/sign-up',
-                'sign-in' => 'user/auth/sign-in',
-                'log-out' => 'user/auth/log-out',
-                'info' => 'user/auth/info',
+                '/sign-up' => '/user/auth/sign-up',
+                '/sign-in' => '/user/auth/sign-in',
+                '/log-out' => '/user/auth/log-out',
+                '/info' => '/user/auth/info',
             ],
         ],
 

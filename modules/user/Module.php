@@ -22,19 +22,22 @@ class Module extends \yii\base\Module {
         \Yii::configure($this, require __DIR__ . '/userModulConfog.php');
     }
 
-//    public function behaviors() {
-//        return [
-//            'access' => [
-//                'class' => AccessControl::class,
-//                'rules' => [
-//                    [
-//                        'allow' => true,
-//                        'controllers' => ['user/auth'],
-//                        'actions' => ['log-out'],
-//                        'roles' => ['@']
-//                    ],
-//                ]
-//            ]
-//        ];
-//    }
+    public function behaviors() {
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'controllers' => ['/user/auth'],
+                        'actions' => ['log-out'],
+                        'roles' => ['@']
+                    ],
+                    [
+                        'allow' => true,
+                    ]
+                ]
+            ]
+        ];
+    }
 }

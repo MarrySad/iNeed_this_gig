@@ -11,6 +11,10 @@ body {
     background-size: cover;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    color: #f2f5fc;
+}
+
 .wrap {
     flex: 1 auto;
 }
@@ -31,7 +35,12 @@ nav .navbar-brand {
     font-size: 28px;
 }
 
-nav .nav-item a{
+nav .active  {
+    border-color: #a01e81;
+    color: #a01e81!important;
+}
+
+.nav-item a{
     color: #7f7e7e;
     height: 50px;
     margin-left: 10px;
@@ -44,10 +53,7 @@ nav .nav-item a:hover {
     color: #a01e81;
 }
 
-nav .active  {
-    border-color: #a01e81;
-    color: #a01e81;
-}
+
 
 nav .navbar-nav .btn {
     border: 1px solid #7f7e7e;
