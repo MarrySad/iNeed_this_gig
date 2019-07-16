@@ -62,10 +62,10 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'user/auth/sign-up',
-                'user/auth' => 'user/auth/sign-up',
-                'user/sign-in' => 'user/auth/sign-in',
-                'user/log-out' => 'user/auth/log-out',
-                'user/info' => 'user/auth/info',
+                'sign-up' => 'user/auth/sign-up',
+                'sign-in' => 'user/auth/sign-in',
+                'log-out' => 'user/auth/log-out',
+                'info' => 'user/auth/info',
             ],
         ],
 

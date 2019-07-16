@@ -4,8 +4,10 @@
 namespace app\modules\user;
 
 
-class Module extends \yii\base\Module
-{
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
+
+class Module extends \yii\base\Module {
     /**
      * {@inheritdoc}
      */
@@ -14,10 +16,25 @@ class Module extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
-    public function init()
-    {
+    public function init() {
         parent::init();
 
         \Yii::configure($this, require __DIR__ . '/userModulConfog.php');
     }
+
+//    public function behaviors() {
+//        return [
+//            'access' => [
+//                'class' => AccessControl::class,
+//                'rules' => [
+//                    [
+//                        'allow' => true,
+//                        'controllers' => ['user/auth'],
+//                        'actions' => ['log-out'],
+//                        'roles' => ['@']
+//                    ],
+//                ]
+//            ]
+//        ];
+//    }
 }
