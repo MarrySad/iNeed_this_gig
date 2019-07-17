@@ -1,0 +1,134 @@
+@font-face {
+    font-family: "PerpetuaTitlingMT";
+    src: url("../fonts/PerpetuaTitlingMT/PERTILI.ttf");
+}
+@font-face {
+    font-family: FranklinGothicBook;
+    src: url("../fonts/FranklinGothicBook/FRABK.ttf");
+}
+html, body {
+    height: 100%;
+    min-width: 300px;
+}
+body {
+    font-family: FranklinGothicBook, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: url(../images/img-bachground.jpg) no-repeat;
+    background-size: cover;
+}
+nav {
+    min-height: 75px;
+    background-color: #0f1221;
+}
+nav .navbar-brand {
+    font-family: PerpetuaTitlingMT, Arial, sans-serif;
+    color: #7f7e7e;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+nav .nav-item a {
+    color: #7f7e7e;
+    height: 50px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 32px;
+}
+nav .nav-item a:hover {
+    color: #981f88;
+}
+nav .navbar-toggler {
+    border: 1px solid #7f7e7e;
+    align-items: center;
+}
+nav .navbar-toggler-icon {
+    color: #7f7e7e;
+    line-height: 30px;
+}
+.wrap {
+    flex: 1 auto;
+}
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.registratsiya {
+    margin: 0 auto;
+    width: 375px;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.registratsiya-span {
+    width: 100%;
+    font-size: 35px;
+    color: black;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.title-form {
+    text-align: center;
+    margin: 0 auto;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.input-login-password {
+    margin: 5px auto;
+    padding: 1rem;
+    width: 90%;
+    border-radius: 40px;
+    font-size: 20px;
+    outline: none;
+    color: #797979;
+    background-color: #171926;
+}
+.input-login-password:focus {
+    color: black;
+    background-color: white;
+}
+.authorization {
+    margin: 0;
+    padding-left: 35px;
+    width: 285px;
+    color: #171926;
+    font-size: 15px;
+    text-align: initial;
+}
+.form-button {
+    position: relative;
+    bottom: -2rem;
+    padding: 1rem;
+    width: 90%;
+    font-size: 25px;
+    color: white;
+    background-color: #981f88;
+    border: 1px solid #981f88;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .5s;
+}
+.form-button:hover {
+    background-color: #5d185b;
+    border: 1px solid #5d185b;
+}
+.form-button:active {
+    outline: none;
+}
+footer {
+    padding: 8px 16px;
+    min-height: 75px;
+    background-color: #0f1221;
+    color: #7f7e7e;
+    display: flex;
+    align-items: center;
+}
+#copywrite {
+    margin: 0;
+    font-size: 18px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>iNeed_this_reg</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/css.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-md sticky-top">
+        <a href="#" class="navbar-brand">iNeed_this_gig</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path
+                    fill="currentColor"
+                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837
+                    7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+                    16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837
+                    0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="#" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Кнопка</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Авторизация</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="wrap">
+    <main class="d-inline-flex">
+        <div class="registratsiya">
+            <span class="registratsiya-span">Регистрация</span>
+            <form id="w0" class="title-form" action="#" method="post">
+                <div class="form-group field-users-name required">
+                    <input type="text" id="users-name" class="input-login-password" name="Users[name]"
+                           placeholder="Логин: " aria-required="true">
+                </div>
+                <input type="hidden" name="_csrf"
+                       value="-5UkERP8Y8MbRG8VWERi5YBdF0I_rlwxgpjxWdQs7ve51GFZSa4thSpyFi00NwndzDJ9dEnPaQPk4bQInW6mhA==">
+                <div class="form-group field-users-email required">
+                    <input type="text" id="users-email" class="input-login-password name" name="Users[email]"
+                           placeholder="Электронная почта" aria-required="true">
+                </div>
+                <div class="form-group field-users-password required">
+                    <input type="password" id="users-password-one" class="input-login-password" name="Users[password]"
+                           placeholder="Пароль: " aria-required="true">
+                </div>
+                <div class="form-group field-users-password required">
+                    <input type="password" id="users-password-two" class="input-login-password" name="Users[password]"
+                           placeholder="Повторите пароль: " aria-required="true">
+                </div>
+                <p class="authorization">
+                    У вас уже есть аккаунт? <a href="#">Авторизуйтесь</a>
+                </p>
+                <button type="submit" class="form-button">Зарегистрироваться</button>
+            </form>
+        </div>
+    </main>
+</div>
+<footer>
+    <p id="copywrite">© 2019. iNeed_this_gig. Все права защищены</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
