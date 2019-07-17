@@ -77,6 +77,9 @@ $config = [
         'user' => [
             'class' => app\modules\user\Module::class
         ],
+        'calendar' => [
+            'class' => 'app\modules\calendar\CalendarModule',
+        ],
     ],
     'params' => $params,
 ];

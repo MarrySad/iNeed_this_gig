@@ -9,9 +9,6 @@ use app\modules\user\models\Users;
 use app\modules\user\Module;
 use yii\base\Action;
 
-//use yii\bootstrap4\ActiveForm;
-//use yii\web\Response;
-
 class SignInAction extends Action {
     /**
      * @return string|\yii\console\Response|\yii\web\Response

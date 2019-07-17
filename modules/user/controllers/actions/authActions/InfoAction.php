@@ -18,7 +18,6 @@ class InfoAction extends Action
 {
     public function run()
     {
-
         if (\Yii::$app->user->isGuest) {
             throw new HttpException('401', 'Вы не авторизованы');
         }
