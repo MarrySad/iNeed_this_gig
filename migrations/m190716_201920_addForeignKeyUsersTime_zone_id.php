@@ -10,7 +10,7 @@ class m190716_201920_addForeignKeyUsersTime_zone_id extends Migration {
      * {@inheritdoc}
      */
     public function safeUp() {
-        $this->addForeignKey('FK_Users_time_zone', 'Users', 'Users', 'time_zone', 'id');
+        $this->addForeignKey('FK_Users_time_zone', 'Users', 'time_zone_id', 'time_zone', 'id');
     }
 
     /**

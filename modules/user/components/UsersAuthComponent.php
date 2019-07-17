@@ -15,6 +15,8 @@ class UsersAuthComponent extends Component {
     /** @var Users $userModel */
     public $userModel;
 
+    const DEFAULT_TIME_ZONE = 1;
+
     /**
      * @param null $params array
      * @return Users $model
@@ -35,6 +37,7 @@ class UsersAuthComponent extends Component {
     public function registerUser(Users &$model): bool {
         $model->dateRegistry = time();
         $model->passwordHash = \Yii::$app->security->generatePasswordHash($model->password);
+        $model->time_zone_id = self::DEFAULT_TIME_ZONE;
 
         if (!$model->validate()) {
             return false;

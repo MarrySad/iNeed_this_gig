@@ -23,7 +23,6 @@ class SignUpAction extends Action {
         $model = $component->getModel()->setScenarioSignUp();
 
          if (\Yii::$app->request->isPost && $model->load(\Yii::$app->request->post())) {
-            $model = $component->getModel(\Yii::$app->request->post());
             if ($component->registerUser($model)) {
                 return \Yii::$app->response->redirect(\Yii::getAlias('@sign-in'));
             }

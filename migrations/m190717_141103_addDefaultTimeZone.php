@@ -3,16 +3,19 @@
 use yii\db\Migration;
 
 /**
- * Class m190716_130831_addColumnTimeZoneToUsers
+ * Class m190717_141103_addDefaultTimeZone
  */
-class m190716_130831_addColumnTimeZoneToUsers extends Migration
+class m190717_141103_addDefaultTimeZone extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->addColumn('Users', 'time_zone_id', $this->integer(11)->notNull()->defaultValue(1));
+        $this->insert('time_zone', [
+            'default_time_zone' => 'Europe/Moscow',
+            'time_zone' => 'GMT+3',
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class m190716_130831_addColumnTimeZoneToUsers extends Migration
      */
     public function safeDown()
     {
-        $this->dropColumn('Users', 'time_zone_id');
+       $this->truncateTable('time_zone');
     }
 
     /*
@@ -32,7 +35,7 @@ class m190716_130831_addColumnTimeZoneToUsers extends Migration
 
     public function down()
     {
-        echo "m190716_130831_addColumnTimeZoneToUsers cannot be reverted.\n";
+        echo "m190717_141103_addDefaultTimeZone cannot be reverted.\n";
 
         return false;
     }
