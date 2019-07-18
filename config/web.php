@@ -27,6 +27,9 @@ $config = [
         'rbac' => [
             'class' => \app\components\RbacComponent::class,
         ],
+        'dao' => [
+            'class' => \app\components\DaoComponent::class,
+        ],
         'cache' => [
             //            'class' => 'yii\caching\FileCache',
             'class' => 'yii\caching\MemCache',
