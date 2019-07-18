@@ -6,7 +6,7 @@
  * Time: 18:21
  */
 
-namespace app\assets;
+namespace app\modules\user\assets;
 
 
 use yii\web\AssetBundle;
@@ -16,7 +16,7 @@ class RegisterAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web/css/modules/user/auth';
     public $css = [
-        'css.css',
+        'registr.css',
     ];
     public $js = [];
 }

@@ -19,7 +19,8 @@ class AppAsset extends AssetBundle {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/app.css',
+        'css/app.css'
+
     ];
     public $js = [//        '//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
     ];

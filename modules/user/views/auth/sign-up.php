@@ -1,7 +1,7 @@
 <?php
 
-\app\assets\RegisterAsset::register($this);
-
+//\app\assets\RegisterAsset::register($this);
+\app\modules\user\assets\RegisterAsset::register($this);
 use yii\bootstrap4\ActiveForm;
 use \yii\helpers\Html;
 //$ipInfo = file_get_contents('http://ip-api.com/json/' . \Yii::$app->request->userIP);

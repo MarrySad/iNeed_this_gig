@@ -1,11 +1,4 @@
-@font-face {
-    font-family: "PerpetuaTitlingMT";
-    src: url("../../../../fonts/PerpetuaTitlingMT/PERTILI.ttf");
-}
-@font-face {
-    font-family: FranklinGothicBook;
-    src: url("../../../../fonts/FranklinGothicBook/FRABK.ttf");
-}
+
 html, body {
     height: 100%;
     min-width: 300px;

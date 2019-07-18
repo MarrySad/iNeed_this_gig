@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\assets;
+namespace app\modules\user\assets;
 
 use yii\web\AssetBundle;
 
@@ -15,11 +15,11 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class authAsset extends AssetBundle {
+class AuthAsset extends AssetBundle {
     public $basePath = '@webroot';
     public $baseUrl = '@web/css/modules/user/auth';
     public $css = [
-        'style.css',
+        'authorization.css',
     ];
     public $js = [];
 }
