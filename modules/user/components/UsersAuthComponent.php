@@ -61,6 +61,7 @@ class UsersAuthComponent extends Component {
         if (!$model->validate(['email', 'password'])) {
             return false;
         }
+
         $user = $this->getUserByEmail($model->email);
 
         if (!$this->validatePassword($model->password, $user->passwordHash)) {

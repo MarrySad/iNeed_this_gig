@@ -17,8 +17,8 @@ class m190716_201920_addForeignKeyUsersTime_zone_id extends Migration {
      * {@inheritdoc}
      */
     public function safeDown() {
-//        $this->dropForeignKey('FK_Users_time_zone', 'Users');
-        $this->dropIndex('FK_Users_time_zone', 'Users');
+        $this->dropForeignKey('FK_Users_time_zone', 'Users');
+//        $this->dropIndex('FK_Users_time_zone', 'Users');
     }
 
     /*
