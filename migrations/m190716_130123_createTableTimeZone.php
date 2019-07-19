@@ -17,6 +17,11 @@ class m190716_130123_createTableTimeZone extends Migration
             'default_time_zone' => $this->string(60)->notNull(),
             'time_zone' => $this->string(60),
         ]);
+
+        $this->insert('time_zone', [
+            'default_time_zone' => 'Europe/Moscow',
+            'time_zone' => 'GMT+3',
+        ]);
     }
 
     /**

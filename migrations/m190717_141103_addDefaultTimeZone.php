@@ -12,10 +12,10 @@ class m190717_141103_addDefaultTimeZone extends Migration
      */
     public function safeUp()
     {
-        $this->insert('time_zone', [
-            'default_time_zone' => 'Europe/Moscow',
-            'time_zone' => 'GMT+3',
-        ]);
+//        $this->insert('time_zone', [
+//            'default_time_zone' => 'Europe/Moscow',
+//            'time_zone' => 'GMT+3',
+//        ]);
     }
 
     /**
@@ -23,7 +23,7 @@ class m190717_141103_addDefaultTimeZone extends Migration
      */
     public function safeDown()
     {
-       $this->truncateTable('time_zone');
+//       $this->truncateTable('time_zone');
     }
 
     /*
