@@ -3,11 +3,11 @@
 \app\modules\user\assets\RegisterAsset::register($this);
 use yii\bootstrap4\ActiveForm;
 use \yii\helpers\Html;
-use yii\bootstrap4\ActiveField;
 
 //$ipInfo = file_get_contents('http://ip-api.com/json/' . \Yii::$app->request->userIP);
 //$ipInfo = json_decode($ipInfo);
 //$timezone = $ipInfo->timezone;
+
 ?>
 <?php
 if ($model->errors) : ?>
@@ -22,7 +22,6 @@ if ($model->errors) : ?>
     <?php endforeach; ?>
 <?php endif ?>
 
-
 <main class="d-inline-flex">
     <div class="registratsiya">
         <span class="registratsiya-span">Регистрация</span>
@@ -33,8 +32,7 @@ if ($model->errors) : ?>
                         'class' => 'title-form',
                     ],
                 'fieldConfig' => [
-                    'template' => "{input}{error}",
-                    'errorOptions' => ['class' => 'help-block'],
+//                    'errorOptions' => ['class' => 'alert-warning']
                 ],
             ]); ?>
 
@@ -54,7 +52,12 @@ if ($model->errors) : ?>
             </div>
             <div class="form-group field-users-password required">
 
-                <?= $form->field($model, 'password')
+                <?= $form->field($model, 'password', [
+                    'template' => "{input}\n{error}",
+                    'errorOptions' => [
+                        'class' => 'alert-warning'
+                    ]
+                ])
                     ->textInput()
                     ->label(false)
                     ->passwordInput(['placeholder' => 'Пароль', 'class' => 'input-login-password']); ?>
@@ -62,7 +65,12 @@ if ($model->errors) : ?>
             </div>
             <div class="form-group field-users-password required">
 
-                <?= $form->field($model, 'confirmPass')
+                <?= $field = $form->field($model, 'confirmPass', [
+                        'template' => "{input}\n{error}",
+                        'errorOptions' => [
+                                'class' => 'alert-warning'
+                        ]
+                ])
                     ->textInput()
                     ->label(false)
                     ->passwordInput(['placeholder' => 'Повторите пароль', 'class' => 'input-login-password']); ?>
@@ -74,6 +82,7 @@ if ($model->errors) : ?>
         <?= Html::submitButton('Регистрация', ['class' => 'form-button']); ?>
 
         <?php ActiveForm::end(); ?>
+
 
     </div>
 </main>

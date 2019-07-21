@@ -76,13 +76,13 @@ class Users extends UsersBase implements IdentityInterface {
     public function rules() {
         return array_merge([
             [['confirmPass', 'password'], 'string', 'min' => 6, 'on' => self::SCENARIO_SIGNUP],
-            ['email', 'email'],
+            ['email', 'email', 'message' => 'Введите корректно ваш Email!'],
             [['email'], 'unique', 'on' => self::SCENARIO_SIGNUP],
             [['email'], 'exist', 'on' => self::SCENARIO_SIGNIN],
             ['stayLogged', 'boolean'],
             [['password', 'email'], 'required'],
             ['confirmPass', 'required', 'on' => self::SCENARIO_SIGNUP],
-            ['confirmPass', 'compare', 'compareAttribute' => 'password', 'on' => self::SCENARIO_SIGNUP],
+            ['confirmPass', 'compare', 'compareAttribute' => 'password', 'message' => 'Пароли не совпадают!', 'on' => self::SCENARIO_SIGNUP],
         ], parent::rules());
     }
 
