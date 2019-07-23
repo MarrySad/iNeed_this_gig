@@ -19,6 +19,6 @@ class CalendarModule extends \yii\base\Module
     {
         parent::init();
 
-
+        \Yii::configure($this, require __DIR__ . '/calendarModuleConfig.php');
     }
 }

@@ -9,13 +9,25 @@
 namespace app\modules\calendar\controllers\actions;
 
 
+use app\modules\calendar\components\CalendarComponent;
+use app\modules\calendar\models\Activity;
 use yii\base\Action;
 
 class IndexAction extends Action
 {
     public function run()
     {
-        $this->controller->title = 'calendar';
-        return $this->controller->render('index');
+        $this->controller->title = 'Заглушка';
+
+        $module = \Yii::$app->getModule('calendar');
+        /** @var CalendarComponent $component */
+        $component = $module->get('calendar');
+
+        /** @var Activity $model */
+        $model = $component->getModel();
+
+        $activity = $component->getActivityToday();
+
+        return $this->controller->render('index', ['activity' => $activity]);
     }
 }
