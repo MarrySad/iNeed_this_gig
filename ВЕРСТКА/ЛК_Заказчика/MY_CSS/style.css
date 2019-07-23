@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap');
+
+body {
+    background: #171926;
+}
+
+.container.user-profile {
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-family: 'Libre Franklin', Arial, sans-serif;
+    background-color: #bababe;
+}
+
+.user-profile h3 {
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+.user-profile p,
+.user-profile figcaption,
+.legend-text {
+    color: #000000;
+    font-size: 1.2rem;
+}
+
+.calendar .row:first-child {
+    background-color: #000000;
+}
+
+.calendar-cell,
+.legend-cell,
+.calendar .row {
+    padding: 0.3rem;
+}
+
+.calendar-cell-content {
+    background-color: #ffffff;
+    font-size: 1.5rem;
+    color: #bd129c;
+    text-align: center;
+}
+
+.calendar-cell-content.active-date,
+.legend-cell-content.active-date,
+.round-button {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613069+0,ad1283+50,c4109f+100 */
+    background: #613069; /* Old browsers */
+    background: -moz-linear-gradient(left,  #613069 0%, #ad1283 50%, #c4109f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #613069 0%,#ad1283 50%,#c4109f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #613069 0%,#ad1283 50%,#c4109f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#613069', endColorstr='#c4109f',GradientType=1 ); /* IE6-9 */
+    color: #ffffff;
+}
+
+.legend-cell {
+    max-width: 14%;
+}
+
+.legend-cell-content {
+    min-height: 40px;
+}
+
+.round-button {
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    border-width: 0;
+    border-radius: 50%;
+}
+
+.edit-button {
+    z-index: 1050;
+    top: 1rem;
+    right: 1rem;
+}
+
+.play-button {
+    top: 20%;
+    left: 3.4rem;
+    padding-left: 12px;
+}
+
+@media (min-width: 992px) {
+    .user-profile h3,
+    .calendar-cell-content {
+        font-size: 2.1rem;
+    }
+    .user-profile p,
+    .user-profile figcaption,
+    .legend-text {
+        font-size: 1.5rem;
+    }
+    .container.user-profile {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .calendar-cell,
+    .legend-cell,
+    .calendar .row {
+        padding: 0.5rem;
+    }
+}
