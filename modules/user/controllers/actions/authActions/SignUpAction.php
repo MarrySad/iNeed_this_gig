@@ -9,9 +9,11 @@ use app\modules\user\models\Users;
 use app\modules\user\Module;
 use yii\base\Action;
 
-class SignUpAction extends Action {
+class SignUpAction extends Action
+{
 
-    public function run() {
+    public function run()
+    {
         $this->controller->title = 'Регистрация пользователя';
         /** @var Module $module */
         $module = \Yii::$app->getModule('user');
@@ -20,20 +22,14 @@ class SignUpAction extends Action {
         $component = $module->get('users');
 
         /** @var Users $model */
-        $model = $component->getModel();
+        $model = $component->getModel()->setScenarioSignUp();
 
-        if (\Yii::$app->request->isPost) {
-            $model = $component->getModel(\Yii::$app->request->post());
-            $model->setScenario($model::SCENARIO_REGISTER);
+        if (\Yii::$app->request->isPost && $model->load(\Yii::$app->request->post())) {
             if ($component->registerUser($model)) {
-                \Yii::$app->session->addFlash('success', 'Регистрация есть');
-                return $this->controller->redirect('/sign-in');
-            } else {
-                \Yii::$app->session->addFlash('alert', 'Регистрации нет');
+                return \Yii::$app->response->redirect(\Yii::getAlias('@sign-in'));
             }
         }
 
         return $this->controller->render('sign-up', ['model' => $model]);
     }
-
 }

@@ -20,6 +20,9 @@ use Yii;
  * @property int $dateRegistry Дата регистрации юзера на сайте
  * @property int $dateVisit Дата последнего входа на сайт
  * @property string $birthday Дата рождения клиента
+ * @property int $time_zone_id
+ *
+ * @property TimeZone $timeZone
  */
 class UsersBase extends \yii\db\ActiveRecord
 {
@@ -37,14 +40,15 @@ class UsersBase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email', 'passwordHash'], 'required'],
             [['typeRegistry'], 'string'],
-            [['dateRegistry', 'dateVisit'], 'integer'],
+            [['email', 'passwordHash'], 'required'],
+            [['dateRegistry', 'dateVisit', 'time_zone_id'], 'integer'],
             [['birthday'], 'safe'],
             [['family', 'name', 'patronymic'], 'string', 'max' => 60],
             [['email', 'authKey'], 'string', 'max' => 100],
             [['phone'], 'string', 'max' => 22],
             [['passwordHash', 'authToken'], 'string', 'max' => 300],
+            [['time_zone_id'], 'exist', 'skipOnError' => true, 'targetClass' => TimeZone::className(), 'targetAttribute' => ['time_zone_id' => 'id']],
         ];
     }
 
@@ -67,6 +71,15 @@ class UsersBase extends \yii\db\ActiveRecord
             'dateRegistry' => Yii::t('app', 'Date Registry'),
             'dateVisit' => Yii::t('app', 'Date Visit'),
             'birthday' => Yii::t('app', 'Birthday'),
+            'time_zone_id' => Yii::t('app', 'Time Zone ID'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTimeZone()
+    {
+        return $this->hasOne(TimeZone::className(), ['id' => 'time_zone_id']);
     }
 }

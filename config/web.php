@@ -11,9 +11,10 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
-        '@sign-in' => 'sign-in',
-        '@sign-up' => 'sign-up',
-        '@log-out' => 'log-out'
+        '@sign-in' => '/sign-in',
+        '@sign-up' => '/sign-up',
+        '@log-out' => '/log-out',
+        '@info' => '/info',
     ],
     'components' => [
         'request' => [
@@ -26,8 +27,13 @@ $config = [
         'rbac' => [
             'class' => \app\components\RbacComponent::class,
         ],
+        'dao' => [
+            'class' => \app\components\DaoComponent::class,
+        ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            //            'class' => 'yii\caching\FileCache',
+            'class' => 'yii\caching\MemCache',
+            'useMemcached' => true
         ],
         'user' => [
             'identityClass' => app\modules\user\models\Users::class,
@@ -52,6 +58,9 @@ $config = [
                 ],
             ],
         ],
+        'menu' => [
+            'class' => app\components\menuComponent::class
+        ],
         'db' => $db,
 
         'urlManager' => [
@@ -59,10 +68,10 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'user/auth/sign-up',
-                'sign-up' => 'user/auth/sign-up',
-                'sign-in' => 'user/auth/sign-in',
-                'log-out' => 'user/auth/log-out',
-                'info' => 'user/auth/info',
+                '/sign-up' => '/user/auth/sign-up',
+                '/sign-in' => '/user/auth/sign-in',
+                '/log-out' => '/user/auth/log-out',
+                '/info' => '/user/auth/info',
             ],
         ],
 
@@ -70,6 +79,9 @@ $config = [
     'modules' => [
         'user' => [
             'class' => app\modules\user\Module::class
+        ],
+        'calendar' => [
+            'class' => 'app\modules\calendar\CalendarModule',
         ],
     ],
     'params' => $params,
@@ -89,8 +101,8 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['82.151.209.202', '90.151.136.236'],
-        //        'allowedIPs' => ['*'],
+//        'allowedIPs' => ['82.151.209.202', '90.151.136.236'],
+                'allowedIPs' => ['*'],
     ];
 }
 
