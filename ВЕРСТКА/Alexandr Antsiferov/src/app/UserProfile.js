@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import UserInfo from "./component/UserInfo";
 import UserTrack from "./component/UserTracks";
 import UserVideos from "./component/UserVideos";
 import Timetable from "./component/timetable/Timetable";
-
-
 
 export default class UserProfile extends Component {
   constructor(props) {
@@ -38,4 +35,3 @@ export default class UserProfile extends Component {
   }
 }
 
-ReactDOM.render(<UserProfile />, document.querySelector("#root"));

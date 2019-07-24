@@ -1,12 +1,12 @@
 .background {
     background-color: #bababe;
   }
-  
+
   .userAv {
     position: relative;
     width: 100%;
   }
-  
+
   .editUserAv {
     position: absolute;
     right: 30px;
@@ -16,24 +16,24 @@
     background: url("../img/for_interface/marker.png") no-repeat center,-webkit-linear-gradient( 2deg, rgb(96,49,104) 0%, rgb(147,32,133) 58%, rgb(198,15,161) 100%);
     background: url("../img/for_interface/marker.png") no-repeat center,-ms-linear-gradient( 2deg, rgb(96,49,104) 0%, rgb(147,32,133) 58%, rgb(198,15,161) 100%);
   }
-  
+
   .decorationBlock {
     display: inline-block;
     width: 29px;
     height: 29px; 
     margin-right: 20px;
   }
-  
+
   .cover {
     background: url("../img/for_interface/cover.png") no-repeat center;
     width: 138px;
     height: 132px; 
   }
-  
+
   .playButton {
     position: relative;
   }
-  
+
   .playButton::after {
     content: "";
     border: 14px solid transparent;
@@ -42,26 +42,26 @@
     left: 21px;
     top: 14px;   
   }
-  
+
   .btn:focus {
     outline: none;
     box-shadow: none;
     }
-  
+
   .trackItemWrap {
     flex-grow: unset;
   }
-  
+
   .addTrackWrap {
     flex-grow: unset;
     width: 138px;
     height: 138px;
   }
-  
+
   .addTrack {
     position: relative;
   }
-  
+
   .addTrack::before {
       content: "+";
       font-size:32px;
@@ -69,14 +69,14 @@
       font-family:courier;
       color:white;
     }
-  
+
   .bg-button {
     background: no-repeat center, rgba(106, 37, 116, 1);
     background: no-repeat center,-moz-linear-gradient( 2deg, rgb(96,49,104) 0%, rgb(147,32,133) 58%, rgb(198,15,161) 100%);
     background: no-repeat center,-webkit-linear-gradient( 2deg, rgb(96,49,104) 0%, rgb(147,32,133) 58%, rgb(198,15,161) 100%);
     background: no-repeat center,-ms-linear-gradient( 2deg, rgb(96,49,104) 0%, rgb(147,32,133) 58%, rgb(198,15,161) 100%);
   }
-  
+
   .round-btn {
     width: 57px;
     height: 57px;
@@ -84,7 +84,7 @@
     border: none;
     outline: none;
   }
-  
+
   .vertical-center {
     display: flex;
     justify-content: center;
@@ -179,13 +179,13 @@
     background: #2875C7;
     color: #FFFFFF;
   }
-  
+
   .exampleBlock {
     width: 60px;
     height: 50px;
     display: inline-block;
   }
-  
+
   .exampleBlockDesc {
     font-size: 1.7rem;
-  }
+  } 
